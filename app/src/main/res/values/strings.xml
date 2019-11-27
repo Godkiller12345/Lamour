@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lamour</string>
+    <string name="action">角色互動</string>
+    <string name="life_notice">生活提醒</string>
+    <string name="shop">商店</string>
+    <string name="buy_something">消費代勞</string>
+    <string name="language">多國語言</string>
+</resources>
