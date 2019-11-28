@@ -5,4 +5,8 @@
     <string name="shop">商店</string>
     <string name="buy_something">消費代勞</string>
     <string name="language">多國語言</string>
+    <string name="title_activity_life_notice">Life_notice</string>
+    <string name="title_activity_action">Action</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>

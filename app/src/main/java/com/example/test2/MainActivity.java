@@ -1,5 +1,6 @@
 package com.example.test2;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -11,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
     }
 
     @Override
@@ -44,12 +48,20 @@ public class MainActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.language || id == R.id.life_notice || id == R.id.buy_something || id == R.id.shop || id == R.id.action) {
-            return true;
+        switch (item.getItemId()) {
+            case R.id.life_notice:
+                Intent lifenotice = new Intent();
+                lifenotice.setClass(MainActivity.this , Life_notice.class);
+                startActivity(lifenotice);
+                return true;
+            case R.id.action:
+                Intent character = new Intent();
+                character.setClass(MainActivity.this , Action.class);
+                startActivity(character);
+                return true;
+            default:
+                return super.onContextItemSelected(item);
         }
-
-        return super.onOptionsItemSelected(item);
+        //noinspection SimplifiableIfStatement
     }
 }
