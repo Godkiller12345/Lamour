@@ -59,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
                 character.setClass(MainActivity.this , Action.class);
                 startActivity(character);
                 return true;
+            case R.id.shop:
+                Intent Shopper = new Intent();
+                Shopper.setClass(MainActivity.this , Shop.class);
+                startActivity(Shopper);
+                return true;
             default:
                 return super.onContextItemSelected(item);
         }
