@@ -1,39 +1,42 @@
 package com.example.test2;
 
+
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
+
 import com.google.android.material.tabs.TabLayout;
 
-import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-
-import com.example.test2.ui.main.SectionsPagerAdapter;
-
 public class Shop extends AppCompatActivity {
+
+    private Toolbar shoptoolbar;
+    private TabLayout shoptabLayout;
+    private ViewPager shopviewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        viewPager.setAdapter(sectionsPagerAdapter);
-        TabLayout tabs = findViewById(R.id.tabs);
-        tabs.setupWithViewPager(viewPager);
-        FloatingActionButton fab = findViewById(R.id.fab);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        shoptoolbar = (Toolbar) findViewById(R.id.Shop_Toolbar);
+        shoptabLayout = (TabLayout) findViewById(R.id.Shop_TabLayout);
+        shopviewPager = (ViewPager) findViewById(R.id.ShopViewPager);
+
+        setSupportActionBar(shoptoolbar);
+        setupViewPager(shopviewPager);
+
+        shoptabLayout.setupWithViewPager(shopviewPager);
+    }
+
+
+    private void setupViewPager(ViewPager viewPager) {
+
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPagerAdapter.addFragment(new MoneyShop(), "課金商店");
+        viewPagerAdapter.addFragment(new ScoreShop(), "積分商店");
+        viewPager.setAdapter(viewPagerAdapter);
+
     }
 }

@@ -7,7 +7,9 @@
     <string name="language">多國語言</string>
     <string name="title_activity_life_notice">Life_notice</string>
     <string name="title_activity_action">Action</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="Money_Shop">這是課金商店</string>
+    <string name="Score_Shop">這是積分商店</string>
+    <string name="Char_One">這是角色一</string>
+    <string name="Char_Two">這是角色二</string>
     <string name="title_activity_shop">Shop</string>
 </resources>
